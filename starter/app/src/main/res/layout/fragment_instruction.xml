@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.instruction.InstructionFragment">
+
+    <data>
+
+        <variable
+            name="instructionViewModel"
+            type="com.udacity.shoestore.ui.instruction.InstructionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:padding="@dimen/large_margin">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_edit_text"
+            app:layout_constraintBottom_toBottomOf="@id/instructions_text_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/logo_imageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/large_margin"
+            android:contentDescription="@string/accessibility_winged_feet_logo"
+            android:src="@drawable/ic_winged_feet_logo_red"
+            app:layout_constraintBottom_toTopOf="@id/about_header_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/about_header_textView"
+            style="@style/large_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_margin"
+            android:text="@string/instructions"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@id/instructions_text_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo_imageView" />
+
+        <TextView
+            android:id="@+id/instructions_text_textView"
+            style="@style/medium_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.5"
+            android:padding="@dimen/large_margin"
+            android:text="@string/instructions_text"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about_header_textView" />
+
+        <Button
+            android:id="@+id/go_to_shoe_list_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/centralizing_margin"
+            android:layout_marginEnd="@dimen/centralizing_margin"
+            android:backgroundTint="@color/background_button"
+            android:text="@string/instructions_go_to_list_button"
+            app:layout_constraintTop_toBottomOf="@id/instructions_text_textView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

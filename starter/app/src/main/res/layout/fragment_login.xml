@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.udacity.shoestore.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".ui.login.LoginFragment">
+
+        <ImageView
+            android:id="@+id/winged_feet_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/accessibility_login_image"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_winged_feet" />
+
+        <TextView
+            android:id="@+id/login_message_textView"
+            style="@style/large_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/please_login_to_your_account"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/login_linear_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/winged_feet_imageView" />
+
+        <LinearLayout
+            android:id="@+id/login_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/centralizing_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/centralizing_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/create_account_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_message_textView">
+
+            <TextView
+                android:id="@+id/email_textView"
+                style="@style/medium_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/email_editText"
+                android:text="@string/email" />
+
+            <EditText
+                android:id="@+id/email_editText"
+                style="@style/medium_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny_margin"
+                android:autofillHints="@string/accessibility_login_email"
+                android:background="@drawable/background_edit_text"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/standard_margin"
+                tools:text="jfamedeiros@gmail.com" />
+
+            <TextView
+                android:id="@+id/password_textView"
+                style="@style/medium_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:labelFor="@+id/password_editText"
+                android:text="@string/password" />
+
+            <EditText
+                android:id="@+id/password_editText"
+                style="@style/medium_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny_margin"
+                android:autofillHints="@string/accessibility_login_password"
+                android:background="@drawable/background_edit_text"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:padding="@dimen/standard_margin"
+                tools:text="123456" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/create_account_button"
+            style="@style/small_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/large_margin"
+            android:background="@android:color/transparent"
+            android:onClick="@{() -> loginViewModel.onLogin()}"
+            android:text="@string/create_a_new_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/login_button"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_linear_layout" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/large_margin"
+            android:backgroundTint="@color/background_button"
+            android:onClick="@{() -> loginViewModel.onLogin()}"
+            android:text="@string/button_login"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_large"
+            app:layout_constraintBaseline_toBaselineOf="@id/create_account_button"
+            app:layout_constraintBottom_toBottomOf="@id/create_account_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/create_account_button"
+            app:layout_constraintTop_toTopOf="@id/create_account_button" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

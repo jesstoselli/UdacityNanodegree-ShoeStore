@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.welcome.WelcomeFragment">
+
+    <data>
+
+        <variable
+            name="welcomeViewModel"
+            type="com.udacity.shoestore.ui.welcome.WelcomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:padding="@dimen/large_margin">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_edit_text"
+            app:layout_constraintBottom_toBottomOf="@id/instructions_text_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/logo_imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/large_margin"
+            android:contentDescription="@string/accessibility_winged_feet_logo"
+            android:src="@drawable/ic_winged_feet_logo_red"
+            app:layout_constraintBottom_toTopOf="@id/about_header_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/about_header_textView"
+            style="@style/large_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_margin"
+            android:text="@string/about_winged_feet"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@id/instructions_text_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo_imageView" />
+
+        <TextView
+            android:id="@+id/instructions_text_textView"
+            style="@style/medium_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.5"
+            android:padding="@dimen/standard_margin"
+            android:text="@string/about_text"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/about_header_textView" />
+
+        <Button
+            android:id="@+id/instructions_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="@color/background_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/instructions"
+            android:textColor="@color/text_color_light"
+            app:icon="@drawable/ic_round_assistant_24"
+            app:iconTint="@color/text_color_light"
+            app:layout_constraintTop_toBottomOf="@id/instructions_text_textView"
+            app:layout_constraintBottom_toTopOf="@id/rights_textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/rights_textView"
+            style="@style/small_text_style"
+            android:textAlignment="center"
+            android:layout_marginBottom="@dimen/standard_margin"
+            android:paddingStart="@dimen/large_margin"
+            android:paddingEnd="@dimen/large_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.5"
+            android:text="@string/about_rights"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

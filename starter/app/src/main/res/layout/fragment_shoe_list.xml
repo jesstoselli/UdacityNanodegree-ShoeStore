@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.shoelist.ShoeListFragment">
+
+    <data>
+
+        <variable
+            name="shoeListViewModel"
+            type="com.udacity.shoestore.ui.shoelist.ShoeListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/shoeList_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ourShoes_textView2"
+                style="@style/large_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@color/background_button"
+                android:padding="@dimen/standard_margin"
+                android:text="@string/our_shoes"
+                android:textAlignment="center"
+                android:textSize="@dimen/font_large" />
+
+            <com.udacity.shoestore.ui.TextViewDrawableSize
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/image_borders"
+                android:drawableTop="@drawable/sneakers_authentic"
+                android:drawablePadding="@dimen/tiny_margin"
+                android:text="@string/authentic"
+                android:textAlignment="center"
+                android:textColor="@color/text_color_dark"
+                app:compoundDrawableHeight="@dimen/image_square"
+                app:compoundDrawableWidth="@dimen/image_square" />
+
+            <com.udacity.shoestore.ui.TextViewDrawableSize
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/image_borders"
+                android:drawableTop="@drawable/sneakers_era"
+                android:drawablePadding="@dimen/tiny_margin"
+                android:text="@string/era"
+                android:textAlignment="center"
+                android:textColor="@color/text_color_dark"
+                app:compoundDrawableHeight="@dimen/image_square"
+                app:compoundDrawableWidth="@dimen/image_square" />
+
+            <com.udacity.shoestore.ui.TextViewDrawableSize
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/image_borders"
+                android:drawableTop="@drawable/sneakers_old_skool"
+                android:drawablePadding="@dimen/tiny_margin"
+                android:text="@string/old_skool"
+                android:textAlignment="center"
+                android:textColor="@color/text_color_dark"
+                app:compoundDrawableHeight="@dimen/image_square"
+                app:compoundDrawableWidth="@dimen/image_square" />
+
+            <com.udacity.shoestore.ui.TextViewDrawableSize
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/image_borders"
+                android:drawableTop="@drawable/sneakers_platform"
+                android:drawablePadding="@dimen/tiny_margin"
+                android:text="@string/platform"
+                android:textAlignment="center"
+                android:textColor="@color/text_color_dark"
+                app:compoundDrawableHeight="@dimen/image_square"
+                app:compoundDrawableWidth="@dimen/image_square" />
+
+            <com.udacity.shoestore.ui.TextViewDrawableSize
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/image_borders"
+                android:drawableTop="@drawable/sneakers_sk8_hi"
+                android:drawablePadding="@dimen/tiny_margin"
+                android:text="@string/sk8_hi"
+                android:textAlignment="center"
+                android:textColor="@color/text_color_dark"
+                app:compoundDrawableHeight="@dimen/image_square"
+                app:compoundDrawableWidth="@dimen/image_square" />
+
+            <com.udacity.shoestore.ui.TextViewDrawableSize
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:background="@drawable/image_borders"
+                android:drawableTop="@drawable/sneakers_slip_on"
+                android:drawablePadding="@dimen/tiny_margin"
+                android:text="@string/slip_on"
+                android:textAlignment="center"
+                android:textColor="@color/text_color_dark"
+                app:compoundDrawableHeight="@dimen/image_square"
+                app:compoundDrawableWidth="@dimen/image_square" />
+
+            <com.udacity.shoestore.ui.TextViewDrawableSize
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:layout_marginBottom="@dimen/large_margin"
+                android:background="@drawable/image_borders"
+                android:drawableTop="@drawable/sneakers_ultrarange"
+                android:drawablePadding="@dimen/tiny_margin"
+                android:text="@string/ultrarange"
+                android:textAlignment="center"
+                android:textColor="@color/text_color_dark"
+                app:compoundDrawableHeight="@dimen/image_square"
+                app:compoundDrawableWidth="@dimen/image_square" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/background_button"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:layout_marginBottom="@dimen/large_margin"
+        android:contentDescription="@string/accessibility_see_details_about_the_shoe"
+        app:srcCompat="@drawable/ic_add"
+        app:backgroundTint="@null"
+        app:tint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

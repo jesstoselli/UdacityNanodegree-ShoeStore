@@ -1,3 +1,41 @@
 <resources>
-    <string name="app_name">ShoeStore</string>
+    <string name="app_name">Winged Feet</string>
+
+    <!--    Login Fragment    -->
+    <string name="please_login_to_your_account">Please, login to your account</string>
+    <string name="email">Email:</string>
+    <string name="password">Password:</string>
+    <string name="button_login">login</string>
+    <string name="create_a_new_login">Create a new login</string>
+
+    <!--    Welcome Fragment    -->
+    <string name="about_winged_feet">About Winged Feet</string>
+    <string name="about_text">We are an American manufacturer of skateboarding shoes and related apparel, started in Santa Monica, California, and owned by VK Corporation. The company also sponsors surf, snowboarding, BMX, and motocross teams.
+
+        From 1996 to 2019, the company has been the primary sponsor of the annual Winged and Warped Tour traveling rock festival.</string>
+    <string name="about_rights">© Copyrights warning: All pictures in this app have been retrieved from the Vans US official website.</string>
+
+    <!--    Instructions Fragment    -->
+    <string name="instructions">Instructions</string>
+    <string name="instructions_text">In the next screen, you will see a list of shoes you may choose from.</string>
+    <string name="instructions_go_to_list_button">go to shoes list</string>
+
+    <!--    ShoeList Fragment    -->
+    <string name="our_shoes">Our Shoes</string>
+    <string name="authentic">Authentic</string>
+    <string name="era">Era</string>
+    <string name="old_skool">Old Skool</string>
+    <string name="platform">Platform</string>
+    <string name="sk8_hi">Sk8-Hi</string>
+    <string name="slip_on">Slip On</string>
+    <string name="ultrarange">Ultrarange</string>
+
+    <!--    Accessibility    -->
+    <string name="accessibility_login_image">Winged Feet shoe store</string>
+    <string name="accessibility_login_email">email</string>
+    <string name="accessibility_login_password">password</string>
+    <string name="accessibility_winged_feet_logo">Winged Feet logo</string>
+    <string name="accessibility_see_details_about_the_shoe">See details about the shoe</string>
+
+
 </resources>
