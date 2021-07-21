@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Winged Feet</string>
 
+    <string name="toolbar_logout">Logout</string>
+
     <!--    Login Fragment    -->
     <string name="please_login_to_your_account">Please, login to your account</string>
     <string name="email">Email:</string>
@@ -10,10 +12,8 @@
 
     <!--    Welcome Fragment    -->
     <string name="about_winged_feet">About Winged Feet</string>
-    <string name="about_text">We are an American manufacturer of skateboarding shoes and related apparel, started in Santa Monica, California, and owned by VK Corporation. The company also sponsors surf, snowboarding, BMX, and motocross teams.
-
-        From 1996 to 2019, the company has been the primary sponsor of the annual Winged and Warped Tour traveling rock festival.</string>
-    <string name="about_rights">© Copyrights warning: All pictures in this app have been retrieved from the Vans US official website.</string>
+    <string name="about_text">Winged Feet leads the celebration of sneaker and youth culture around the globe through a portfolio of brands. With approximately 3,000 retail stores in 32 countries across around the world, as well as websites and mobile apps, its purpose is to inspire and empower youth culture around the world, by fueling a shared passion for self-expression and creating unrivaled experiences.</string>
+    <string name="about_rights">© Copyrights warning: All texts and descriptions in this app have been retrieved from the FootLocker official website.</string>
 
     <!--    Instructions Fragment    -->
     <string name="instructions">Instructions</string>
@@ -22,13 +22,12 @@
 
     <!--    ShoeList Fragment    -->
     <string name="our_shoes">Our Shoes</string>
-    <string name="authentic">Authentic</string>
-    <string name="era">Era</string>
-    <string name="old_skool">Old Skool</string>
-    <string name="platform">Platform</string>
-    <string name="sk8_hi">Sk8-Hi</string>
-    <string name="slip_on">Slip On</string>
-    <string name="ultrarange">Ultrarange</string>
+    <string name="shoe_size_label">Shoe Size</string>
+
+    <!--    NewShoe Fragment    -->
+    <string name="description">Description:</string>
+    <string name="newShoe_cancel">Cancel</string>
+    <string name="newShoe_add_new_shoe_button">Add new shoe</string>
 
     <!--    Accessibility    -->
     <string name="accessibility_login_image">Winged Feet shoe store</string>
@@ -36,6 +35,14 @@
     <string name="accessibility_login_password">password</string>
     <string name="accessibility_winged_feet_logo">Winged Feet logo</string>
     <string name="accessibility_see_details_about_the_shoe">See details about the shoe</string>
-
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_a_new_shoe_to_the_inventory">Add a new shoe to the inventory</string>
+    <string name="newShoe_company">Company</string>
+    <string name="accessibility_newshoe_company">Company name</string>
+    <string name="accessibility_newshoe_name">Shoe model</string>
+    <string name="newShoe_name">Model</string>
+    <string name="newShoe_shoe_size">Shoe size</string>
+    <string name="accessibility_shoe_size">Shoe size</string>
+    <string name="accessibility_shoe_description">Shoe Description</string>
 
 </resources>

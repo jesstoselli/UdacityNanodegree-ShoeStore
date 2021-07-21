@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="TextViewDrawableSize">
-        <attr name="compoundDrawableWidth" format="dimension"/>
-        <attr name="compoundDrawableHeight" format="dimension"/>
+    <declare-styleable name="ShoeItem">
+        <attr name="name" format="string" />
+        <attr name="company" format="string" />
+        <attr name="shoeSize" format="string" />
+        <attr name="description" format="string" />
+        <attr name="android:textColor" format="color" />
+        <attr name="android:textSize" format="dimension" />
     </declare-styleable>
 </resources>

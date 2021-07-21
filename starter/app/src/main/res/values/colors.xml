@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#EE2E2B</color>
+    <color name="colorPrimaryDark">#001C29</color>
+    <color name="colorAccent">#003046</color>
 
     <color name="text_color_light">#F8F8F8</color>
     <color name="text_color_dark">#001C29</color>
     <color name="background">#001C29</color>
-    <color name="background_light">#E6E6E6</color>
-    <color name="background_edittext">#003046</color>
-    <color name="background_button">#EE2E2B</color>
-<!--    <color name="background_button">#5F0403</color>-->
+    <color name="background_light">#003046</color>
+    <color name="red">#EE2E2B</color>
 </resources>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.ShoeDetailFragment">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+
+        <variable
+            name="shoeDetailViewModel"
+            type="com.udacity.shoestore.viewmodels.ShoeListViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/newShoeCompany_textView"
+            style="@style/medium_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            android:labelFor="@+id/newShoeCompany_editView"
+            android:text="@string/newShoe_company"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/newShoeCompany_editView"
+            style="@style/medium_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:autofillHints="@string/accessibility_newshoe_company"
+            android:background="@drawable/rounded_corners_blue"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="@dimen/standard_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newShoeCompany_textView"
+            tools:text="Vans" />
+
+        <TextView
+            android:id="@+id/newShoeName_textView"
+            style="@style/medium_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:labelFor="@+id/newShoeName_editView"
+            android:text="@string/newShoe_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newShoeCompany_editView" />
+
+        <EditText
+            android:id="@+id/newShoeName_editView"
+            style="@style/medium_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:autofillHints="@string/accessibility_newshoe_name"
+            android:background="@drawable/rounded_corners_blue"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="@dimen/standard_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newShoeName_textView"
+            tools:text="Authentic" />
+
+        <TextView
+            android:id="@+id/newShoeSize_textView"
+            style="@style/medium_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:labelFor="@+id/newShoeSize_editView"
+            android:text="@string/newShoe_shoe_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newShoeName_editView" />
+
+        <EditText
+            android:id="@+id/newShoeSize_editView"
+            style="@style/medium_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:autofillHints="@string/accessibility_shoe_size"
+            android:background="@drawable/rounded_corners_blue"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/standard_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newShoeSize_textView"
+            tools:text="5.5" />
+
+        <TextView
+            android:id="@+id/newShoeDescription_textView"
+            style="@style/medium_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:labelFor="@+id/newShoeDescription_editView"
+            android:text="@string/description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newShoeSize_editView" />
+
+        <EditText
+            android:id="@+id/newShoeDescription_editView"
+            style="@style/medium_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:autofillHints="@string/accessibility_shoe_description"
+            android:background="@drawable/rounded_corners_blue"
+            android:ems="10"
+            android:inputType="textCapSentences|textMultiLine"
+            android:lineSpacingMultiplier="1.3"
+            android:maxLength="2000"
+            android:maxLines="4"
+            android:padding="@dimen/standard_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newShoeDescription_textView"
+            tools:text="A low top shoe with a shorter tongue than the Old Skool, with sturdy padding, secure laces and our signature waffle outsoles." />
+
+
+        <Button
+            android:id="@+id/newShoe_cancel_button"
+            style="@style/medium_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/background_light"
+            android:padding="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/large_margin"
+            android:text="@string/newShoe_cancel"
+            app:layout_constraintEnd_toStartOf="@id/newShoe_AddNewShoe_button"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newShoeDescription_editView" />
+
+        <Button
+            android:id="@+id/newShoe_AddNewShoe_button"
+            style="@style/medium_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:padding="@dimen/standard_margin"
+            android:text="@string/newShoe_add_new_shoe_button"
+            app:layout_constraintBaseline_toBaselineOf="@id/newShoe_cancel_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/newShoe_cancel_button" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

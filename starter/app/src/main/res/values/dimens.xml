@@ -8,10 +8,12 @@
     <dimen name="centralizing_margin">48dp</dimen>
 
     <!--    Text   -->
+    <dimen name="font_title">18sp</dimen>
     <dimen name="font_large">16sp</dimen>
     <dimen name="font_medium">14sp</dimen>
     <dimen name="font_small">12sp</dimen>
 
     <!--    Images   -->
     <dimen name="image_square">250dp</dimen>
+    <dimen name="image_shoe">60dp</dimen>
 </resources>

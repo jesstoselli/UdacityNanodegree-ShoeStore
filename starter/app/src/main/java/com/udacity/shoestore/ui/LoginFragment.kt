@@ -1,4 +1,4 @@
-package com.udacity.shoestore.ui.login
+package com.udacity.shoestore.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,11 +11,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
+import com.udacity.shoestore.viewmodels.LoginViewModel
 
 class LoginFragment : Fragment() {
 
     private lateinit var viewModel: LoginViewModel
-
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
@@ -55,5 +55,3 @@ class LoginFragment : Fragment() {
     }
 
 }
-
-//                Toast.makeText(requireContext(), "${viewModel.userHasLoggedIn.value}", Toast.LENGTH_SHORT).show()

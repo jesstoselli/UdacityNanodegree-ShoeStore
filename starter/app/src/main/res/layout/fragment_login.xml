@@ -7,7 +7,7 @@
 
         <variable
             name="loginViewModel"
-            type="com.udacity.shoestore.ui.login.LoginViewModel" />
+            type="com.udacity.shoestore.viewmodels.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +16,7 @@
         android:background="@color/background"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".ui.login.LoginFragment">
+        tools:context=".ui.LoginFragment">
 
         <ImageView
             android:id="@+id/winged_feet_imageView"
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/tiny_margin"
                 android:autofillHints="@string/accessibility_login_email"
-                android:background="@drawable/background_edit_text"
+                android:background="@drawable/rounded_corners_blue"
                 android:ems="10"
                 android:inputType="textEmailAddress"
                 android:padding="@dimen/standard_margin"
@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/tiny_margin"
                 android:autofillHints="@string/accessibility_login_password"
-                android:background="@drawable/background_edit_text"
+                android:background="@drawable/rounded_corners_blue"
                 android:ems="10"
                 android:inputType="textPassword"
                 android:padding="@dimen/standard_margin"
@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
             android:layout_marginEnd="@dimen/large_margin"
-            android:backgroundTint="@color/background_button"
+            android:backgroundTint="@color/red"
             android:onClick="@{() -> loginViewModel.onLogin()}"
             android:text="@string/button_login"
             android:textColor="@android:color/white"

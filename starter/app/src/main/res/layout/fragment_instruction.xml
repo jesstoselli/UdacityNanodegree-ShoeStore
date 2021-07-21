@@ -2,14 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.instruction.InstructionFragment">
-
-    <data>
-
-        <variable
-            name="instructionViewModel"
-            type="com.udacity.shoestore.ui.instruction.InstructionViewModel" />
-    </data>
+    tools:context=".ui.InstructionFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,7 +13,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/background_edit_text"
+            android:src="@drawable/rounded_corners_blue"
             app:layout_constraintBottom_toBottomOf="@id/instructions_text_textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,8 +64,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/centralizing_margin"
             android:layout_marginEnd="@dimen/centralizing_margin"
-            android:backgroundTint="@color/background_button"
+            android:backgroundTint="@color/red"
             android:text="@string/instructions_go_to_list_button"
+            android:textColor="@color/text_color_light"
             app:layout_constraintTop_toBottomOf="@id/instructions_text_textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
