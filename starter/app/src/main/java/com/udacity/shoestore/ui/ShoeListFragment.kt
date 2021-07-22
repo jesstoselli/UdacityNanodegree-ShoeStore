@@ -30,7 +30,6 @@ class ShoeListFragment : Fragment() {
         )
 
         viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
-        binding.shoeListViewModel = viewModel
         setHasOptionsMenu(true)
 
         viewModel.hasShoeBeenAdded.observe(viewLifecycleOwner, Observer {

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
+import timber.log.Timber
 
 class ShoeListViewModel : ViewModel() {
 
@@ -82,14 +83,13 @@ class ShoeListViewModel : ViewModel() {
 
     fun onAddNewShoeToList() {
         _hasShoeBeenAdded.value = false
-        resetForm()
     }
 
     fun onLogOut() {
         _isUserLoggedIn.value = false
     }
 
-    private fun resetForm() {
+    fun resetForm() {
         _shoe.value = Shoe("", 0.0, "", "")
     }
 
