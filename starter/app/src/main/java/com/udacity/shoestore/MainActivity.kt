@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
@@ -22,13 +21,19 @@ class MainActivity : AppCompatActivity() {
         binding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.myNavHostFragment) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.myNavHostFragment) as NavHostFragment
 
         navController = navHostFragment.navController
+        appBarConfiguration = AppBarConfiguration(navController.graph)
         NavigationUI.setupActionBarWithNavController(this, navController)
 
-        appBarConfiguration = AppBarConfiguration(navController.graph)
         navController.addOnDestinationChangedListener { navcontroller, destination, _ ->
+            if (destination.id == R.id.welcomeFragment || destination.id == R.id.shoeListFragment) {
+                supportActionBar?.setHomeButtonEnabled(false)
+                supportActionBar?.setDisplayHomeAsUpEnabled(false)
+            }
+
             if (destination.id == navcontroller.graph.startDestination) {
                 supportActionBar?.setHomeButtonEnabled(false)
                 supportActionBar?.setDisplayHomeAsUpEnabled(false)
