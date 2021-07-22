@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.withStyledAttributes
 import com.udacity.shoestore.R
+import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.shoe_list_item.view.*
 
 class ShoeItem: ConstraintLayout {
@@ -20,12 +21,13 @@ class ShoeItem: ConstraintLayout {
         setup(context, null)
     }
 
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        setup(context, attrs)
-    }
+    constructor(context: Context, shoe: Shoe) : super(context) {
+        setup(context, null)
+        setShoeCompany(shoe.company)
+        setShoeName(shoe.name)
+        setShoeSize(shoe.size.toString())
+        setShoeDescription(shoe.description)
 
-    constructor(ctx: Context, attrs: AttributeSet?, def: Int) : super(ctx, attrs, def) {
-        setup(context, attrs)
     }
 
     fun setShoeCompany(label: String) {

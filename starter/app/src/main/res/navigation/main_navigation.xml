@@ -79,6 +79,14 @@
         android:id="@+id/shoeDetailFragment"
         android:name="com.udacity.shoestore.ui.ShoeDetailFragment"
         android:label="Add a new shoe to the inventory"
-        tools:layout="@layout/fragment_shoe_detail" />
+        tools:layout="@layout/fragment_shoe_detail" >
+        <action
+            android:id="@+id/action_shoeDetailFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
 
 </navigation>

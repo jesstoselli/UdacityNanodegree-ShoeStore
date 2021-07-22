@@ -2,6 +2,7 @@ package com.udacity.shoestore.ui
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -28,8 +29,18 @@ class ShoeDetailFragment : Fragment() {
             false
         )
 
-        viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
         binding.shoeDetailViewModel = viewModel
+
+        binding.newShoeAddNewShoeButton.setOnClickListener {
+            if (viewModel.addShoeToList()) {
+                viewModel.addShoeToList()
+                findNavController().navigateUp()
+            } else {
+                Toast.makeText(requireContext(), "All fields must be filled.", Toast.LENGTH_LONG)
+                    .show()
+            }
+        }
 
         binding.newShoeCancelButton.setOnClickListener {
             findNavController().navigateUp()

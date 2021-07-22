@@ -19,14 +19,20 @@ class ShoeListViewModel : ViewModel() {
     val hasShoeBeenAdded: LiveData<Boolean>
         get() = _hasShoeBeenAdded
 
+    private val _isUserLoggedIn = MutableLiveData<Boolean>()
+    val isUserLoggedIn: LiveData<Boolean>
+        get() = _isUserLoggedIn
+
+
     init {
+        _shoe.value = Shoe("", 0.0, "", "", mutableListOf())
+        _shoeList.value = originalShoeList()
         _hasShoeBeenAdded.value = false
-        _shoe.value = Shoe("", 0.0, "", "")
-        originalShoeList()
+        _isUserLoggedIn.value = true
     }
 
-    private fun originalShoeList() {
-        val originalShoeList = mutableListOf(
+    private fun originalShoeList(): MutableList<Shoe> {
+        return mutableListOf(
             Shoe(
                 "Authentic",
                 5.5,
@@ -58,16 +64,33 @@ class ShoeListViewModel : ViewModel() {
                 "Flexible, lightweight, and undeniably comfortable, these crocs featuring classic clog upper add a new style dimension to your closet."
             )
         )
-        _shoeList.postValue(originalShoeList)
+        // _shoeList.postValue(originalShoeList)
     }
 
-    fun addShoeToList(shoe: Shoe) {
-        _shoeList.value?.add(shoe)
-        _hasShoeBeenAdded.value = true
+    fun addShoeToList(): Boolean {
+        if (validateFields()) {
+            _shoeList.value?.add(_shoe.value!!)
+            _hasShoeBeenAdded.value = true
+            return true
+        } else return false
+    }
+
+    private fun validateFields(): Boolean {
+        return shoe.value?.name?.isNotEmpty() == true && shoe.value?.company?.isNotEmpty() == true && shoe.value?.size.toString()
+            .isNotEmpty() && shoe.value?.description?.isNotEmpty() == true
     }
 
     fun onAddNewShoeToList() {
         _hasShoeBeenAdded.value = false
+        resetForm()
+    }
+
+    fun onLogOut() {
+        _isUserLoggedIn.value = false
+    }
+
+    private fun resetForm() {
         _shoe.value = Shoe("", 0.0, "", "")
     }
+
 }

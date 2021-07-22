@@ -2,7 +2,6 @@ package com.udacity.shoestore.ui
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -16,15 +15,13 @@ import com.udacity.shoestore.viewmodels.ShoeListViewModel
 class ShoeListFragment : Fragment() {
 
     private lateinit var viewModel: ShoeListViewModel
-
     private lateinit var binding: FragmentShoeListBinding
-
-    private lateinit var viewGroup: ViewGroup
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_shoe_list,
@@ -32,35 +29,27 @@ class ShoeListFragment : Fragment() {
             false
         )
 
-        viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
         binding.shoeListViewModel = viewModel
-
         setHasOptionsMenu(true)
 
-        if (view != null) {
-            viewGroup = view as ViewGroup
-            viewGroup.let {
-                View.inflate(context, R.layout.shoe_list_item, it)
+        viewModel.hasShoeBeenAdded.observe(viewLifecycleOwner, Observer {
+            if (it == true) {
+                viewModel.onAddNewShoeToList()
             }
-        }
+        })
 
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { listOfShoes ->
-            listOfShoes.forEach {
-//                val linearLayout = LinearLayout(context)
-//                linearLayout.orientation = LinearLayout.VERTICAL
-//
-//                val layoutParams =
-//                    LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-//                layoutParams.setMargins(0, R.dimen.standard_margin, 0, 0)
+            listOfShoes.forEach { shoe ->
+                val shoeItem = ShoeItem(requireContext(), shoe)
+                binding.shoeListLinearLayout.addView(shoeItem)
+            }
+        })
 
-
-                val newShoeItem = ShoeItem(requireContext())
-
-                newShoeItem.setShoeCompany(it.company)
-                newShoeItem.setShoeName(it.name)
-                newShoeItem.setShoeSize(it.size.toString())
-                newShoeItem.setShoeDescription(it.description)
-                binding.shoeListLinearLayout.addView(newShoeItem)
+        viewModel.isUserLoggedIn.observe(viewLifecycleOwner, Observer {
+            if (it == false) {
+                val action = ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment()
+                NavHostFragment.findNavController(this).navigate(action)
             }
         })
 
@@ -85,6 +74,6 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun loggingOut() {
-        Toast.makeText(context, "Come back soon!", Toast.LENGTH_SHORT).show()
+        viewModel.onLogOut()
     }
 }
