@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.viewmodels.ShoeListViewModel
-import timber.log.Timber
 
 class ShoeDetailFragment : Fragment() {
 
@@ -34,8 +33,10 @@ class ShoeDetailFragment : Fragment() {
         binding.shoeDetailViewModel = viewModel
 
         binding.newShoeAddNewShoeButton.setOnClickListener {
-            if (viewModel.addShoeToList()) {
+
+            if (viewModel.validateFields()) {
                 viewModel.addShoeToList()
+                viewModel.resetForm()
                 findNavController().navigateUp()
             } else {
                 Toast.makeText(requireContext(), "All fields must be filled.", Toast.LENGTH_LONG)

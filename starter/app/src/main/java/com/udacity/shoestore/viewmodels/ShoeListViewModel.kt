@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
-import timber.log.Timber
 
 class ShoeListViewModel : ViewModel() {
 
@@ -16,19 +15,13 @@ class ShoeListViewModel : ViewModel() {
     val shoeList: LiveData<MutableList<Shoe>>
         get() = _shoeList
 
-    private val _hasShoeBeenAdded = MutableLiveData<Boolean>()
-    val hasShoeBeenAdded: LiveData<Boolean>
-        get() = _hasShoeBeenAdded
-
     private val _isUserLoggedIn = MutableLiveData<Boolean>()
     val isUserLoggedIn: LiveData<Boolean>
         get() = _isUserLoggedIn
 
-
     init {
         _shoe.value = Shoe("", 0.0, "", "", mutableListOf())
         _shoeList.value = originalShoeList()
-        _hasShoeBeenAdded.value = false
         _isUserLoggedIn.value = true
     }
 
@@ -65,24 +58,15 @@ class ShoeListViewModel : ViewModel() {
                 "Flexible, lightweight, and undeniably comfortable, these crocs featuring classic clog upper add a new style dimension to your closet."
             )
         )
-        // _shoeList.postValue(originalShoeList)
     }
 
-    fun addShoeToList(): Boolean {
-        if (validateFields()) {
-            _shoeList.value?.add(_shoe.value!!)
-            _hasShoeBeenAdded.value = true
-            return true
-        } else return false
+    fun addShoeToList() {
+        _shoeList.value?.add(_shoe.value!!)
     }
 
-    private fun validateFields(): Boolean {
+    fun validateFields(): Boolean {
         return shoe.value?.name?.isNotEmpty() == true && shoe.value?.company?.isNotEmpty() == true && shoe.value?.size.toString()
             .isNotEmpty() && shoe.value?.description?.isNotEmpty() == true
-    }
-
-    fun onAddNewShoeToList() {
-        _hasShoeBeenAdded.value = false
     }
 
     fun onLogOut() {
@@ -92,5 +76,4 @@ class ShoeListViewModel : ViewModel() {
     fun resetForm() {
         _shoe.value = Shoe("", 0.0, "", "")
     }
-
 }

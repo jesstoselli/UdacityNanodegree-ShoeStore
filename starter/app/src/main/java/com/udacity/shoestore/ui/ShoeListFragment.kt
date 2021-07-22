@@ -32,12 +32,6 @@ class ShoeListFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
         setHasOptionsMenu(true)
 
-        viewModel.hasShoeBeenAdded.observe(viewLifecycleOwner, Observer {
-            if (it == true) {
-                viewModel.onAddNewShoeToList()
-            }
-        })
-
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { listOfShoes ->
             listOfShoes.forEach { shoe ->
                 val shoeItem = ShoeItem(requireContext(), shoe)
