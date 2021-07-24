@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
@@ -14,7 +14,7 @@ import com.udacity.shoestore.viewmodels.ShoeListViewModel
 
 class ShoeListFragment : Fragment() {
 
-    private lateinit var viewModel: ShoeListViewModel
+    private val viewModel by activityViewModels<ShoeListViewModel>()
     private lateinit var binding: FragmentShoeListBinding
 
     override fun onCreateView(
@@ -29,7 +29,6 @@ class ShoeListFragment : Fragment() {
             false
         )
 
-        viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
         setHasOptionsMenu(true)
 
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { listOfShoes ->
