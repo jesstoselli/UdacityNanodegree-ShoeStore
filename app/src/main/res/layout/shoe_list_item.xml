@@ -10,6 +10,8 @@
             type="com.udacity.shoestore.models.Shoe" />
     </data>
 
+    <!--  I've chosen a ConstraintLayout for this so it would be easier
+   to properly place the elements in the small layout. -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

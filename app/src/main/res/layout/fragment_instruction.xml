@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.InstructionFragment">
 
+    <!--  I've chosen a ConstraintLayout for this because of the background rectangle
+     image of the design. If there's another way of doing so I'm not aware of it. -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

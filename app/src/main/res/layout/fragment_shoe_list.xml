@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.ShoeListFragment">
 
+    <!-- The ConstraintLayout was chosen for this fragment because of the Floating
+    Action Button in the bottom, so it would be over the rest of the layout elements -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

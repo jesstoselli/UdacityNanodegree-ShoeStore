@@ -11,11 +11,16 @@
             type="com.udacity.shoestore.viewmodels.ShoeListViewModel" />
     </data>
 
+    <!--  ScrollView was used here as for the system keyboard not to
+      overlap the last edit text field. This way the whole layout may be
+      slided up when the keyboard is showing. -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
+        <!--  I've chosen a ConstraintLayout for the same reason as in the LoginFragment,
+               as I'd like to use the baseline functionality we've learned and that's been applied
+               to the buttons on the bottom -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

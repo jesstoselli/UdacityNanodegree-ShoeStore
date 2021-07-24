@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <!--  I've chosen a LinearLayout since there's not much in this xml
+   and the fragment will be inserted afterwards  -->
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background"
@@ -17,5 +19,5 @@
             app:defaultNavHost="true"
             app:navGraph="@navigation/main_navigation" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
