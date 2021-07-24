@@ -3,13 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="loginViewModel"
-            type="com.udacity.shoestore.viewmodels.LoginViewModel" />
-    </data>
-
     <!--  I've chosen a ConstraintLayout for this because I wanted to use the
          baseline functionality we've learned in the lessons. It's been applied
          to the buttons on the bottom -->
@@ -110,7 +103,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/large_margin"
             android:background="@android:color/transparent"
-            android:onClick="@{() -> loginViewModel.onLogin()}"
             android:text="@string/create_a_new_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/login_button"
@@ -125,7 +117,6 @@
             android:layout_marginTop="@dimen/small_margin"
             android:layout_marginEnd="@dimen/large_margin"
             android:backgroundTint="@color/red"
-            android:onClick="@{() -> loginViewModel.onLogin()}"
             android:text="@string/button_login"
             android:textColor="@android:color/white"
             android:textSize="@dimen/font_large"
